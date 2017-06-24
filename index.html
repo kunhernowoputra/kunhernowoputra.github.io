@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+Copyright Google Inc.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="keywords" content="Programmer, Laravel, Lumen, Backend,Indonesia" />
+    <meta name="description" content="Programmer Backend Indonesia." />
+    <meta name="author" content="Kun Hernowo Putra" />
+    <link rel="icon" href="terminal.ico" type="image/x-icon" />
+    <title>Kun Hernowo Putra</title>
+    <link rel="stylesheet" media="all" href="terminal.css">
+    <link rel="chrome-application-definition" href="manifest.json">
+
+</head>
+
+<body>
+
+    <div class="interlace"></div>
+    <div id="container"></div>
+
+    <script src="terminal.js"></script>
+    <script>
+        (function() {
+            var term = new Terminal('container');
+            term.initFS(false, 1024 * 1024);
+
+            if (document.location.hash) {
+                var theme = document.location.hash.substring(1).split('=')[1];
+                term.setTheme(theme);
+            } else if (localStorage.theme) {
+                term.setTheme(localStorage.theme);
+            }
+        })();
+
+    </script>
+</body>
+
+</html>
